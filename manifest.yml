@@ -1,7 +1,7 @@
 ---
 applications:
   - name: my-app
-    command: node packages/my-app/index.js
+    command: node index.js
     no-route: true
     health-check-type: process
-    path: .
+    path: ./packages/my-app/
