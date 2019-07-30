@@ -2,6 +2,6 @@
 applications:
   - name: my-app
     command: node packages/my-app/index.js
-    routes:
-      - route: my-app-mchelen.cfapps.io
-    path: ./packages/my-app
+    no-route: true
+    health-check-type: process
+    path: .
