@@ -1,3 +1,2 @@
-import myDateTime from '@my/lib';
-
-console.log(myDateTime());
+const lib = require('@my/lib');
+console.log(lib.myDateTime());
