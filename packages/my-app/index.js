@@ -1,2 +1,2 @@
 const lib = require('@my/lib');
-console.log(lib.myDateTime());
+console.log('Hello from my-app at ' + lib.myDateTime());
