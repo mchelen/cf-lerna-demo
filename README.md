@@ -4,27 +4,43 @@
 
 ## Steps
 ```bash
+    cd packages/my-lib
     npm install
-    npm run bootstrap
-    npm cf:login
-    cf push
+    cd ../packages/my-app
+    npm install
+    npm ls
 ```
 
 
 ## Result
 
 ```
-   npm ERR! code E404
-   npm ERR! 404 Not Found - GET https://registry.npmjs.org/@my%2flib - Not found
-   npm ERR! 404 
-   npm ERR! 404  '@my/lib@^1.0.0' is not in the npm registry.
-   npm ERR! 404 You should bug the author to publish it (or use the name yourself!)
-   npm ERR! 404 It was specified as a dependency of 'app'
-   npm ERR! 404 
-   npm ERR! 404 Note that you can also install from a
-   npm ERR! 404 tarball, folder, http url, or git url.
-   npm ERR! A complete log of this run can be found in:
-   npm ERR!     /home/vcap/.npm/_logs/2019-07-30T21_17_11_054Z-debug.log
-          **ERROR** Unable to build dependencies: exit status 1
-   Failed to compile droplet: Failed to run all supply scripts: exit status 14
+@my/app@1.0.0 /home/mchelen/tmp/cf-lerna-demo/packages/my-app
+├─┬ @my/lib@1.0.0 -> /home/mchelen/tmp/cf-lerna-demo/packages/my-lib
+│ └── UNMET DEPENDENCY lodash@^4.17.15
+└─┬ bunyan@1.8.12
+  ├─┬ dtrace-provider@0.8.7
+  │ └── nan@2.14.0
+  ├── moment@2.24.0
+  ├─┬ mv@2.1.1
+  │ ├─┬ mkdirp@0.5.1
+  │ │ └── minimist@0.0.8
+  │ ├── ncp@2.0.0
+  │ └─┬ rimraf@2.4.5
+  │   └─┬ glob@6.0.4
+  │     ├─┬ inflight@1.0.6
+  │     │ ├── once@1.4.0 deduped
+  │     │ └── wrappy@1.0.2
+  │     ├── inherits@2.0.4
+  │     ├─┬ minimatch@3.0.4
+  │     │ └─┬ brace-expansion@1.1.11
+  │     │   ├── balanced-match@1.0.0
+  │     │   └── concat-map@0.0.1
+  │     ├─┬ once@1.4.0
+  │     │ └── wrappy@1.0.2 deduped
+  │     └── path-is-absolute@1.0.1
+  └── safe-json-stringify@1.2.0
+
+npm ERR! missing: lodash@^4.17.15, required by @my/lib@1.0.0
+
 ```
